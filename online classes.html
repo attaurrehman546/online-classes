@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>online classes</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #1a0033, #000033);
+      position: relative;
+    }
+
+    /* Animated background */
+    .waves {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(90deg, #ff00cc, #ff9900, #ccff00, #00ffcc, #0099ff, #9900ff);
+      background-size: 600% 600%;
+      animation: waveFlow 25s ease infinite;
+      opacity: 0.85;
+      filter: blur(1px);
+      z-index: 0;
+    }
+
+    .waves::before, .waves::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: inherit;
+      background-size: 600% 600%;
+      animation: waveFlow 30s ease infinite reverse;
+      opacity: 0.6;
+    }
+
+    .waves::after { animation-duration: 35s; }
+
+    @keyframes waveFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* MAIN LAYOUT FIX */
+    .container {
+      position: relative;
+      z-index: 10;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 20px;
+      padding: 40px 5%;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+      padding: 24px;
+      width: 100%;
+      max-width: 260px;
+
+      text-align: center;
+      color: white;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover { transform: translateY(-10px) scale(1.03); }
+
+    .main-card {
+      max-width: 520px;
+      padding: 50px 35px;
+      background: linear-gradient(135deg, rgba(255,0,255,0.25), rgba(0,255,255,0.25));
+    }
+
+    .main-card h1 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, #ffffff, #e0f7ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .main-card p {
+      font-size: 1rem;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #00ccff, #ff00cc);
+      color: white;
+      padding: 14px 42px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255,0,255,0.6);
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 28px;
+    }
+
+    .left-card .icon { background: #a855f7; }
+    .right-card .icon { background: #22d3ee; }
+
+    .right-card a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.85rem;
+      word-break: break-word;
+    }
+
+    .right-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* MOBILE FIX */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .card, .main-card {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="waves"></div>
+
+  <div class="container">
+
+    <div class="card left-card">
+      <div class="icon">📞</div>
+      <h3>Phone Number</h3>
+      <p>050 8641983</p>
+      <p style="font-size:0.85rem;">Parent inquiries welcome</p>
+    </div>
+
+    <div class="card main-card">
+  <h1>Online IGCSE Tutoring</h1>
+
+<p>
+Personalized online tutoring in Physics, Mathematics, English, and Biology.
+Focused on concept clarity, confidence building, homework support, and exam preparation.<br>
+<div style="margin-top:20px; text-align:left;">
+  <h3>Why Choose Me?</h3>
+
+  <p>✅ One-to-one attention</p>
+  <p>✅ Friendly and patient teaching</p>
+  <p>✅ Focus on understanding, not memorization</p>
+  <p>✅ Homework and exam support</p>
+  <p>✅ Flexible scheduling</p>
+  <p>✅ Free introductory session</p>
+</div>
+</p>
+      <a href="index1.html" class="btn">VIEW DETAILS</a>
+    </div>
+
+    <div class="card right-card">
+      <div class="icon">📧</div>
+      <h3>Email</h3>
+      <p>
+        <a href="mailto:attakhan546601@gmail.com">attakhan546601@gmail.com</a>
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
